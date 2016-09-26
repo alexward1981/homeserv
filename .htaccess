@@ -1,6 +1,4 @@
-<Directory "/var/www/html">
-    AuthType Basic
-    AuthName "Restricted Content"
-    AuthUserFile .htpasswd
-    Require valid-user
-</Directory>
+AuthType Basic
+AuthName "Restricted area"
+AuthUserFile /var/www/homeserv/public_html/.htpasswd
+Require valid-user
