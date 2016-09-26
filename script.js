@@ -19,7 +19,7 @@ var getJSON = function(url) {
 
 // get data from HUE Api
 var hue = (function() {
-  var apiurl = 'http://192.168.0.11/api',
+  var apiurl = 'http://mediaserve.boxtools.pw:5500/api',
       apikey = 'SOX1dFLtPEJJstJtLeDppZit4JEA43FIu8mieKZv';
 
   getJSON(apiurl+'/'+apikey+'/lights').then(function(data) {
