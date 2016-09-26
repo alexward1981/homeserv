@@ -23,7 +23,7 @@ var hue = (function() {
       apikey = 'SOX1dFLtPEJJstJtLeDppZit4JEA43FIu8mieKZv';
 
   getJSON(apiurl+'/'+apikey+'/lights').then(function(data) {
-    $('div').html(data.result).insertAfter('.jumbotron');
+    $('.hue div').html(data.result);
 }, function(status) { //error detection....
   alert('Something went wrong.');
 });
