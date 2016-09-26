@@ -20,7 +20,7 @@ var getJSON = function(url) {
 // get data from HUE Api
 var hue = (function() {
   var apiurl = 'http://192.168.0.11/api',
-      apikey =SOX1dFLtPEJJstJtLeDppZit4JEA43FIu8mieKZv
+      apikey = 'SOX1dFLtPEJJstJtLeDppZit4JEA43FIu8mieKZv';
 
   getJSON(apiurl+'/'+apikey+'/lights').then(function(data) {
     $('div').html(data.result).insertAfter('.jumbotron');
