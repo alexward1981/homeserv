@@ -20,10 +20,23 @@ var getJSON = function(url) {
 // get data from HUE Api
 var hue = (function() {
   var apiurl = 'http://mediaserve.boxtools.pw:5500/api',
-      apikey = 'SOX1dFLtPEJJstJtLeDppZit4JEA43FIu8mieKZv';
+      apikey = 'SOX1dFLtPEJJstJtLeDppZit4JEA43FIu8mieKZv',
+      container = $('.hue'),
+      lightList = $('<ul />');
 
   getJSON(apiurl+'/'+apikey+'/lights').then(function(data) {
-    $('.hue div').html(data.result);
+    $.each(data, function(key, value) {
+      console.log(value);
+      var state;
+      if(!value.state.on) {
+        state = 'off'
+      } else {
+        state = value.state.bri;
+      }
+      $('<li><strong>'+value.name+'</strong> is <strong>'+state+'</strong></li>').appendTo(lightList)
+    });
+    container.find('div').remove();
+    lightList.appendTo(container);
 }, function(status) { //error detection....
   alert('Something went wrong.');
 });
